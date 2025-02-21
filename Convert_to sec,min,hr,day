@@ -1,0 +1,30 @@
+Write a program to convert the given seconds to day, hours , minutes and seconds format
+
+
+s=int(input())
+d=s//(3600*24)
+s%=(3600*24)
+h=s//3600
+s%=3600
+m=s//60
+s%=60
+if d>0:
+    print(f'Day:{d}',end=',')
+if h>0:
+    print(f'Hours:{h}',end=',')
+if m>0:
+    print(f'Min:{m}',end=',')
+if s>=0:
+    print(f'Sec:{s}')
+
+Input1: 
+1321856 
+
+Output1: 
+Day: 15, Hours: 7, Min: 10, Sec: 56
+
+Input2: 
+21856 
+
+Output2: 
+Hours: 6, Min: 4, Sec: 16 
