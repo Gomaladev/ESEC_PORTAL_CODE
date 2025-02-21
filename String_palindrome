@@ -1,0 +1,22 @@
+Write a program to check whether a string is a Palindrome or not
+
+Constraints
+Length of the string should be greater than one and less than 100.
+
+a=input()
+if a==a[::-1]:
+    print('Palindrome')
+else:
+    print('Not a Palindrome')
+
+input1:
+madam
+
+output1:
+Palindrome
+
+input2:
+extend
+
+output2:
+Not a Palindrome
