@@ -7,11 +7,12 @@ Explanation
 Weighted score of 25 = 5 (perfect square), 16 = 5+3,24 = 4+3, 21 = 0, 19=0
 The increasing order would be 19,21,25,24,16
 
+Approach 1:
+
 import operator
 import math
 n=4
 arr=[25,17,0,18]
-
 d={i:0 for i in arr}
 for i in range(len(arr)):
     if math.isqrt(arr[i])**2==arr[i] and arr[i]!=0:
@@ -29,6 +30,30 @@ if 0 in m:
     print(c)
 else:
     print(m)
+
+
+
+Approach 2:
+
+import math
+import operator
+n=int(input())
+b=list(map(int,input().split()))
+arr={i:0 for i in b}
+for i in range(len(b)):
+    if math.isqrt(b[i])**2==b[i] and b[i]!=0:
+        arr[b[i]]+=5
+    if b[i]%4==0 and b[i]%6==0 and b[i]!=0:
+        arr[b[i]]+=4
+    if b[i]%2==0 and b[i]!=0:
+        arr[b[i]]+=3
+d=sorted(arr.items(),key=operator.itemgetter(1,0))
+for i in range(len(d)):
+    a=[i[0] for i in d if i[0]!=0]
+    b=[i[0] for i in d if i[0]==0]
+    c=a+b
+print(" ".join(map(str,c)))    
+
 
 Input1:
 4
