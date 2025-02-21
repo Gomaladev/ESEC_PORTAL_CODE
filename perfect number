@@ -1,0 +1,59 @@
+That is Perfection
+Write a program to determine whether a number N is equal to the sum of its proper positive divisors(excluding the number itself).
+The first input is the number of test cases, followed by inputs one by one
+Input format:
+First line number of test cases followed by the inputs(N).
+Output format:
+Print YES ,if N is equal to the sum of its proper positive divisors else print NO.
+Constraints:
+1≤T≤100
+1≤N≤109
+
+Approach 1:
+
+a=int(input())
+b=[]
+for i in range(a):
+    b.append(int(input())) 
+for i in range(len(b)):
+    c=[]
+    for j in range(1,100):
+        if b[i]%j==0:
+            if j<b[i]:
+                c.append(j)
+    d=sum(c) 
+    if d==b[i]:
+        print("YES") 
+    else:
+        print("NO")
+
+
+Approach 2:
+
+n=int(input())
+a=[int(input()) for _ in range(n)]
+for i in range(n):
+    c=[]
+    for j in range(1,a[i]):
+        if a[i]%j==0:
+            c.append(j)
+    if sum(c)==a[i]:
+        print('YES')
+    else:
+        print('NO')
+
+Sample Input
+3
+6
+5
+28
+
+Sample output:
+YES
+NO
+YES
+
+Explanation:
+6=1+2+3,so it is perfect
+5=1,so it is not perfect
+28=1+2+4+7+14,so it is perfect
