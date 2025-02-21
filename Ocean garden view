@@ -1,0 +1,48 @@
+There are n buildings in a line. You are given an integer array heights of size n that represents the heights of the buildings in the line.
+The ocean is to the right of the buildings. A building has an ocean view if the building can see the ocean without obstructions. Formally, a building has an ocean view if all the buildings to its right have a smaller height.
+The garden is on the left side of the building. a building has a garden view if all the buildings to the left have a smaller view.
+Return a list of indices (0-indexed) of buildings that have an ocean view, sorted in increasing order
+Return a list of indices (0-indexed) of buildings that have an garden view, sorted in increasing order.
+
+h=list(map(int,input().split(',')))
+o=[]
+mxo=0
+for i in range(len(h)-1,-1,-1):
+    if h[i]>mxo:
+        o.append(i)
+        mxo=h[i]
+o.sort()
+print('[',end='')
+print(",".join(map(str,o)),end='')
+print(']')
+g=[]
+mxg=0
+for i in range(len(h)):
+    if h[i]>mxg:
+        g.append(i)
+        mxg=h[i]
+g.sort()
+print('[',end='')
+print(','.join(map(str,g)),end='')
+print(']')
+
+Input1:
+4,2,3,1
+
+Output1:
+[0,2,3]
+[0]
+
+Input2:
+4,3,2,1
+
+Output2:
+[0,1,2,3]
+[0]
+
+Input3:
+1,2,3,4
+
+Output3:
+[3]
+[0,1,2,3]
