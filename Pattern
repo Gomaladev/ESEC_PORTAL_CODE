@@ -1,0 +1,26 @@
+Program to print the following pattern
+
+a=int(input())
+j=0
+for i in range(a,0,-1):
+    print(' '*(a-i)+"* " *(a-j))
+    j+=1
+for i in range(a):
+    print(" "*(a-i-1)+'* '*(a-j+1))
+    j-=1
+
+
+Input1:
+5
+
+Output1:
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
