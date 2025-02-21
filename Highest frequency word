@@ -1,0 +1,34 @@
+Find the Highest Frequency Word in a given sentence
+
+a=input()
+a=a.replace('.','').split()
+m=0
+b=''
+for i in range(len(a)): 
+    c=a.count(a[i])
+    if c>1:
+        if m<c:
+           m=c
+           b=a[i]
+if m==0:
+    print('None')
+else:    
+    print(b)
+
+Input1:
+Way to Way. I said Way to go!
+
+Output1:
+Way
+
+Input2:
+Return to the base. Right now. Return
+
+Output2:
+Return
+
+Input3:
+What is this?
+
+Output3:
+None
