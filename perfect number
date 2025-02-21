@@ -42,6 +42,7 @@ for i in range(n):
     else:
         print('NO')
 
+
 Sample Input
 3
 6
