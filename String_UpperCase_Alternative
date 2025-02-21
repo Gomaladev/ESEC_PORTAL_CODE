@@ -1,0 +1,20 @@
+Write a program to capitalize the alternate words in a sentence.
+
+a=input().split(" ")
+for i in range(len(a)):
+    if i%2==0: 
+        print(a[i].upper(),end=" ")
+    else:
+        print(a[i],end=" ")
+
+Input1:
+Better late than never
+
+Output1:
+BETTER late THAN never
+
+Input2:
+The early bird catches the worm
+
+Output2:
+THE early BIRD catches THE worm
